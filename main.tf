@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "aws" {
-  region                  = "us-east-1"    
+  region                  = "us-west-2"    
   #shared_credentials_file = var.aws_local_creds_file
-  profile                 = var.aws_local_profile
+  #profile                 = var.aws_local_profile
 }
 
 data "aws_caller_identity" "current" {}
