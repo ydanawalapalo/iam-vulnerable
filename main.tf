@@ -32,20 +32,20 @@ module "tool-testing" {
 # Uncomment the next module to create a lambda and related resources
 ###################
 
-#module "lambda" {
-# source = "./modules/non-free-resources/lambda"
-# aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
-#}
+module "lambda" {
+ source = "./modules/non-free-resources/lambda"
+ aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
+}
 
 ###################
 # Module: EC2
 # Uncomment the next module to create an ec2 instance and related resources
 ###################
 
-#module "ec2" {
-# source = "./modules/non-free-resources/ec2"
-# aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
-#}
+module "ec2" {
+ source = "./modules/non-free-resources/ec2"
+ aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
+}
 
  
 ###################
@@ -63,10 +63,10 @@ module "tool-testing" {
 # Uncomment the next module to create a sagemaker notebook and related resources
 ###################
  
-#module "sagemaker" {
-#   source = "./modules/non-free-resources/sagemaker"
-#   aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
-#}
+module "sagemaker" {
+   source = "./modules/non-free-resources/sagemaker"
+   aws_assume_role_arn = (var.aws_assume_role_arn != "" ? var.aws_assume_role_arn : data.aws_caller_identity.current.arn)
+}
 
 ###################
 # Module: CloudFormation
